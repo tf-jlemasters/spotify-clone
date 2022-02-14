@@ -1,14 +1,22 @@
+import { useEffect, useState } from "react";
+import { signOut, useSession } from "next-auth/react";
+//import useSpotify from "../hooks/useSpotify";
+import { useRecoilState } from "recoil";
+//import { playlistIdState } from "../atoms/playlistAtom";
 import {
-    HomeIcon,
-    SearchIcon,
-    LibraryIcon,
-    PlusCircleIcon,
-    RssIcon,
-    HeartIcon,
+HomeIcon,
+SearchIcon,
+LibraryIcon,
+PlusCircleIcon,
+HeartIcon,
+RssIcon,
+LogoutIcon,
+LoginIcon,
 } from "@heroicons/react/outline";
 
 
 function Sidebar() {
+    const { data: session, status } = useSession();
     return (
         <div className= "text-gray-500 p-5 text-sm border-r border-gray-900">
             <div className= "space-y-4"> 
